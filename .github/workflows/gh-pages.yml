@@ -32,10 +32,11 @@ jobs:
       - name: Ls
         run: ls --color
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master'
+      - name: Deploy to build branch
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./public
+            branch: gh-pages # The branch the action should deploy to.
+            folder: public # The folder the action should deploy.
+            commit-message: Successfully built
+            clean: true
+            single-commit: false
