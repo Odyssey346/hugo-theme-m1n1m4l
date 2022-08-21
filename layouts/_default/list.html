@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <h2>{{ .Description }}</h2>
+  {{ .Content }}
+  <ul>
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ range (where $pages "Section" "!=" "") }}
+        <li><a href="{{ .Permalink }}">{{ .Title | markdownify }} - <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time></a></li>
+      {{ end }}
+  </ul>
+{{ end }}

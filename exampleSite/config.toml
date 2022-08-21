@@ -1,0 +1,5 @@
+baseURL = 'https://Odyssey346.github.io/hugo-theme-m1n1m4l/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "m1n1m4l"
+description = 'This is my site'
