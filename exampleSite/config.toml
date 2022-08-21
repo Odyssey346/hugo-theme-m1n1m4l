@@ -1,4 +1,4 @@
-baseURL = '//odyssey346.dev/hugo-theme-m1n1m4l'
+baseURL = '//hugo-theme-m1n1m4l.netlify.app'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "m1n1m4l"
