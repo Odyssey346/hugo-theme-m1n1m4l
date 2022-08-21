@@ -15,23 +15,19 @@ jobs:
           submodules: false  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       - name: get theme (epic hack)
-        working-directory: ./exampleSite
         run: |
           git clone https://github.com/Odyssey346/hugo-theme-m1n1m4l themes/m1n1m4l
       - name: Setup Hugo
-        working-directory: ./exampleSite
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
 
       - name: Build
-        working-directory: ./exampleSite
         run: hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: ./exampleSite
         if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
